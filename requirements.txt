@@ -1,0 +1,66 @@
+# Usage
+# pip install -r requirements.txt
+
+# General
+scikit-learn
+ipywidgets
+nbimporter
+html2text
+python-dotenv
+unidecode
+html5lib
+numba
+pyyaml
+pandas
+scipy
+torch
+numpy
+ipynb
+lxml
+bs4
+
+# LLM
+transformers==4.36.2
+tokenizers==0.15.0
+sentence-transformers==2.2.2
+datasets==2.15.0
+accelerate==0.21.0
+einops==0.6.1
+langchain==0.0.308
+# xformers==0.0.20
+bitsandbytes==0.40.2
+peft==0.4.0
+trl==0.4.7
+langchain_core
+huggingface_hub
+sentencepiece
+# faiss-gpu
+torchvision
+torchaudio
+spacy
+nltk
+
+# Extensions
+typing-inspect==0.8.0
+typing_extensions==4.5.0
+pydantic==1.10.8
+playwright
+
+# DB
+pinecone-client==2.2.2
+chromadb==0.3.26
+chroma==0.2.0
+pymongo
+
+# API
+google-cloud-storage
+langcorn
+fastapi
+openai
+
+# Plots
+matplotlib
+seaborn
+
+# UI
+gradio
