@@ -1,66 +1,76 @@
 # Usage
 # pip install -r requirements.txt
 
-# General
+# Custom lib --------------------------------------------------------------
+
+# General libraries
+ipywidgets==8.0.4
+numpy==1.26.3
+
+# LLM libraries
+sentence-transformers==2.2.2
+transformers==4.38.1
+tokenizers==0.15.0
+datasets==2.15.0
+accelerate==0.21.0
+tiktoken==0.5.2
+peft==0.4.0
+trl==0.4.7
+
+# Extensions
+tenacity==8.2.3
+pydantic==1.10.8
+umap-learn==0.5.5
+urllib3==1.26.6
+einops==0.6.1
+
+# Default lib --------------------------------------------------------------
+
+# General libraries
 scikit-learn
-ipywidgets
 nbimporter
 html2text
 python-dotenv
 unidecode
 html5lib
+matplotlib
+seaborn
 numba
 pyyaml
 pandas
 scipy
 torch
-numpy
 ipynb
 lxml
 bs4
 
-# LLM
-transformers==4.36.2
-tokenizers==0.15.0
-sentence-transformers==2.2.2
-datasets==2.15.0
-accelerate==0.21.0
-einops==0.6.1
-langchain==0.0.308
-# xformers==0.0.20
-bitsandbytes==0.40.2
-peft==0.4.0
-trl==0.4.7
-langchain_core
+# Langchain
 huggingface_hub
-sentencepiece
-# faiss-gpu
-torchvision
-torchaudio
-spacy
-nltk
+langchain_pinecone
+langchain_groq
+langchain_core
+langchain
 
-# Extensions
-typing-inspect==0.8.0
-typing_extensions==4.5.0
-pydantic==1.10.8
-playwright
-
-# DB
-pinecone-client==2.2.2
-chromadb==0.3.26
-chroma==0.2.0
+# Databases
+pinecone-client
+chromadb
+chroma
+google-cloud-storage
 pymongo
 
 # API
-google-cloud-storage
-langcorn
-fastapi
+huggingface_hub
 openai
+fastapi
+nomic
+groq
 
-# Plots
-matplotlib
-seaborn
+# NLP
+sentencepiece
+spacy
+nltk
 
 # UI
+streamlit-extras
+streamlit
 gradio
