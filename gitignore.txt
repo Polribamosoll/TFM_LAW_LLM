@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Jupyter Notebook
+.jupyter
+.ipynb_checkpoints
+
+# Distribution / packaging
+.conda
+.Python
+
+# Folders
+raptor_pkg/
+raptor/
+optimum-nvidia/
+
+# Other
+.jupyter/desktop-workspaces
+.DS_Store
+
+# Data files
+*.csv

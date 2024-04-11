@@ -1,0 +1,27 @@
+# Usage
+# pip install -r requirements.txt
+
+# Libraries --------------------------------------------------------------
+
+python-dotenv
+typing 
+streamlit 
+datetime 
+pyyaml 
+langchain
+langchain_pinecone 
+pinecone-client 
+groq 
+tiktoken 
+sentence-transformers 
+streamlit-authenticator==0.1.5
+datetime
+bcrypt
+pyopenssl
+deta
+
+# Pytorch
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
+torchaudio

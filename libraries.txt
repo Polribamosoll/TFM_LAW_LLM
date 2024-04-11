@@ -1,0 +1,72 @@
+# Usage
+# pip install -r libraries.txt
+
+# Custom lib --------------------------------------------------------------
+
+# General libraries
+streamlit-authenticator==0.1.5
+ipywidgets==8.0.4
+numpy==1.26.3
+
+# LLM libraries
+sentence-transformers==2.2.2
+transformers==4.38.1
+tokenizers==0.15.0
+datasets==2.15.0
+accelerate==0.21.0
+tiktoken==0.5.2
+peft==0.4.0
+trl==0.4.7
+
+# Extensions
+tenacity==8.2.3
+pydantic==1.10.8
+umap-learn==0.5.5
+urllib3==1.26.6
+einops==0.6.1
+
+# Default lib --------------------------------------------------------------
+
+# General libraries
+scikit-learn
+nbimporter
+sentencepiece
+html2text
+python-dotenv
+nbconvert
+unidecode
+html5lib
+matplotlib
+pyyaml
+pandas
+scipy
+torch
+ipynb
+lxml
+bs4
+
+# Langchain
+huggingface_hub
+langchain_pinecone
+langchain_groq
+langchain_core
+langchain
+
+# Databases
+pinecone-client
+chromadb
+chroma
+pymongo
+
+# API
+huggingface_hub
+openai
+fastapi
+nomic
+deta
+groq
+
+# UI
+streamlit-extras
+streamlit
+gradio
