@@ -1,31 +1,131 @@
+# Project parameters
+
+# Data extraction --------------------------------------------------------------
+
+full_extraction: True
+key_words: ["codigo penal"]
+
+# Data transformation --------------------------------------------------------------
+
 # Transform data
-max_chunk_size: 1500
-chunk_overlap: 250
+max_chunk_size: 1024
+chunk_overlap: 256
+
+# Extract core from text
+extract_core_text: False
+
+# Core quantization
+core_quantization: True
+
+# Final model for Core extraction
+core_model: 'google/gemma-2b-it'
+
+# Other Core extraction models
+core_stability_moel: 'stabilityai/stablelm-2-zephyr-1_6b'
+core_tiny_llama_model: 'TinyLlama/TinyLlama-1.1B-Chat-v1.0'
+core_google_model: 'google/gemma-2b-it'
+
+# Core extraction prompts
+core_prompt: 'Eres un asistente experto en derecho y leyes españolas. Tu función es reescribir el siguiente texto legal de forma clara, concisa y en español. Debes destacar los puntos clave y hacer especial referencia a los artículos legales mencionados en el texto: '
+
+# Core embedding model
+core_embedding_model: 'sentence-transformers/multi-qa-mpnet-base-cos-v1'
+
+# Core model config
+core_return_full_text: True
+core_max_new_tokens: 1024
+core_repetition_penalty: 1.15
+core_temperature: 0.1
+
+# Encoding data --------------------------------------------------------------
 
 # Encoding data
 batch_size: 50
 
-# LLM models
+# Final embedding model
+embedding_model: 'sentence-transformers/multi-qa-mpnet-base-cos-v1'
+
+# Other models
+embedding_model_winner: 'thenlper/gte-base'
+embedding_model_multilingual: 'sentence-transformers/paraphrase-multilingual-mpnet-base-v2'
+embedding_model_multi_qa: 'sentence-transformers/multi-qa-mpnet-base-cos-v1'
+embedding_nodel_mpnet: 'sentence-transformers/all-mpnet-base-v2'
+embedding_model_esp: 'dariolopez/roberta-base-bne-finetuned-msmarco-qa-es-mnrl-mn'
+embedding_model_mxbai: 'mixedbread-ai/mxbai-embed-large-v1'
+
+# Query expansion configuration --------------------------------------------------------------
+
+# Summarizer models
 summarizer_model: 'mrm8488/bert2bert_shared-spanish-finetuned-summarization'
-embedding_model: 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2'
-llama_model: 'meta-llama/Llama-2-7b-hf'
-model: 'mistralai/Mistral-7B-Instruct-v0.2'
-repetition_penalty: 1.1
-return_full_text: True
-max_new_tokens: 1024
-temperature: 0.4
 
-# RAG configuration
-top_k_docs: 10
+# Expand user prompt
+expand_prompt: 'Eres un asistente experto en leyes españolas. En base a la siguiente consulta legal, proporcione un ejemplo de respuesta que podría encontrarse en un documento legal'
 
-# Prompts
+# RAG configuration --------------------------------------------------------------
+
+# RAG Prompts
 pre_prompt: |
-  Como un experto en derecho y leyes españolas, tu tarea es responder preguntas sobre leyes y normas en España.
-  Para ello, debes tener en cuenta y utilizar el contexto proporcionado para responder de forma precisa a la pregunta del usuario.
-  Deberás proporcionar detalles claros y precisos en tus respuestas, asegurándote de referenciar adecuadamente cualquier ley relacionada.
-  Asegúrate de responder siempre en español. Si no conoces la respuesta, admítelo.
-  Estructura correctamente tu respuesta.
+    Eres un asistente experto en derecho y leyes españolas y tu objetivo es proporcionar respuestas exhaustivas y precisas a las preguntas planteadas por tus clientes.
+    Asegúrate de basar tus respuestas en el contexto proporcionado, utilizando todas las leyes y normativas relevantes para fundamentar tus argumentos.
+    Es crucial que todas las respuestas estén redactadas en español y presentadas de forma clara y coherente.
+    Considera ofrecer ejemplos o casos hipotéticos para ilustrar tus puntos de vista.
 prompt_context: |
-  El contexto que debes usar para responder al usuario tiene un formato de lista, donde cada elemento será un diccionario con dos claves.
-  La clave 'context' contendrá la información necesaria para contestar a la pregunta y la clave 'score' será una puntuación entre 0.0 y 1.0. 
-  Deberás dar más importancia al contexto cuanto mayor sea el score del contexto. Referencia tus fuentes, pero no compartas el contexto proporcionado.
+    A continuación, se presenta la información relevante que debes usar para responder a las consultas de los clientes. 
+    En caso de no encontrar la respuesta, debes indicarlo de forma explícita.
+    
+# Reranking model
+reranking_model: 'cross-encoder/ms-marco-MiniLM-L-6-v2'
+
+# Top similarity docs
+top_k_docs: 30
+
+# Top reranked docs
+top_reranked_docs: 15
+
+# Final LLM model --------------------------------------------------------------
+
+# Use optimum nvidia
+use_optimum: False
+
+# Use quantization
+use_quantization: True
+
+# Final LLM model
+model: 'mistralai/Mistral-7B-Instruct-v0.2'
+
+# Max models tokens
+max_model_tokens: 5120
+
+# Other LLM models
+stability_model: 'stabilityai/stablelm-zephyr-3b'
+stability_model_2: 'stabilityai/stablelm-2-zephyr-1_6b'
+mistral_model: 'mistralai/Mistral-7B-Instruct-v0.2'
+llama_model: 'meta-llama/Llama-2-7b-hf'
+db_model: 'databricks/dolly-v2-3b'
+google_model_1: 'google/gemma-7b-it'
+google_model_2: 'google/gemma-2b-it'
+
+# Model config
+return_full_text: True
+max_new_tokens: 2024
+repetition_penalty: 1.10
+temperature: 0.1
+
+# API models --------------------------------------------------------------
+
+# Groq model
+app_model_mistral: 'mixtral-8x7b-32768'
+app_model_google: 'gemma-7b-it'
+app_model: 'mixtral-8x7b-32768'
+
+# Top K Docs
+app_top_k_docs: 50
+
+# Groq max tokens
+app_max_new_tokens: 8096
+
+# Groq config
+app_temperature: 0.0
+
+# Conversation
+app_max_memory: 5
