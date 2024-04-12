@@ -1,0 +1,16 @@
+FROM nvidia/cuda:12.3.0-devel-ubuntu22.04
+
+RUN apt-get update && \
+    apt-get -y install \
+      git \
+    python3.10 \
+    python3-pip \
+    openmpi-bin \
+    libopenmpi-dev
+
+COPY . /opt/optimum-nvidia
+WORKDIR /opt/optimum-nvidia
+
+RUN pip install --pre --extra-index-url https://pypi.nvidia.com -e '.[quality, tests]' && \
+    pip uninstall -y optimum-nvidia && \
+    rm -rf /opt/optimum-nvidia
