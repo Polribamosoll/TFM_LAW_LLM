@@ -77,10 +77,10 @@ prompt_context: |
 reranking_model: 'cross-encoder/ms-marco-MiniLM-L-6-v2'
 
 # Top similarity docs
-top_k_docs: 30
+top_k_docs: 10
 
 # Top reranked docs
-top_reranked_docs: 15
+top_reranked_docs: 10
 
 # Final LLM model --------------------------------------------------------------
 
