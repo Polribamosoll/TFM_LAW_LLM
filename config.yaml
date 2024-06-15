@@ -47,6 +47,7 @@ batch_size: 50
 
 # Final embedding model
 embedding_model: 'sentence-transformers/multi-qa-mpnet-base-cos-v1'
+embed_model_id: 'dariolopez/roberta-base-bne-finetuned-msmarco-qa-es-mnrl-mn'
 
 # Other models
 embedding_model_winner: 'thenlper/gte-base'
@@ -94,7 +95,7 @@ use_optimum: False
 use_quantization: True
 
 # Final LLM model
-model: 'mistralai/Mistral-7B-Instruct-v0.2'
+model: "microsoft/Phi-3-mini-4k-instruct"
 
 # Max models tokens
 max_model_tokens: 5120
