@@ -7,6 +7,9 @@ key_words: ["codigo penal"]
 
 # Data transformation --------------------------------------------------------------
 
+# Pinecone
+index_name: 'lawllm-unstructured-database'
+
 # Transform data
 max_chunk_size: 1024
 chunk_overlap: 256
