@@ -26,3 +26,6 @@ optimum-nvidia/
 
 # Data files
 *.csv
+
+#Env
+env.txt
