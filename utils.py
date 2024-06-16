@@ -528,3 +528,49 @@ def download_from_gcs(bucket_name, source_blob_name, destination_file_name):
     bucket = storage_client.bucket(bucket_name)
     blob = bucket.blob(source_blob_name)
     blob.download_to_filename(destination_file_name)
+
+# Fine Tuning
+
+# Preprocessing function
+def preprocess_function(examples):
+    inputs = tokenizer(
+        examples["question"],
+        examples["context"],
+        max_length=512,
+        truncation="only_second",  
+        padding="max_length",
+        return_offsets_mapping=True,
+        return_tensors="pt"
+    )
+
+    offset_mapping = inputs.pop("offset_mapping").tolist()
+    start_positions = []
+    end_positions = []
+
+    for i, offsets in enumerate(offset_mapping):
+        start_char = examples["answers"][i]["answer_start"]
+        end_char = start_char + len(examples["answers"][i]["text"])
+
+        # Find the start and end token indices that correspond to the start and end character positions
+        start_token_idx = None
+        end_token_idx = None
+
+        for j, (start, end) in enumerate(offsets):
+            if start <= start_char < end:
+                start_token_idx = j
+            if start < end_char <= end:
+                end_token_idx = j
+            if start_token_idx is not None and end_token_idx is not None:
+                break
+
+        if start_token_idx is None or end_token_idx is None:
+            start_token_idx = 0
+            end_token_idx = 0
+
+        start_positions.append(start_token_idx)
+        end_positions.append(end_token_idx)
+
+    inputs["start_positions"] = start_positions
+    inputs["end_positions"] = end_positions
+
+    return inputs
