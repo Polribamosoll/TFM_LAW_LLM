@@ -1,6 +1,6 @@
 # Setup --------------------------------------------------------------
 
-# General libraries
+# General libraries needed
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
 import time

@@ -10,7 +10,7 @@ import yaml
 # Local assets
 from functions.etl_functions import *
 
-# Load env
+# Load environment
 load_dotenv()
 
 # Parameters --------------------------------------------------------------
