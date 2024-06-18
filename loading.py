@@ -20,7 +20,7 @@ load_dotenv()
 with open('config.yaml', 'r') as file:
     config = yaml.safe_load(file)
 
-# Pinecone
+# Pinecone connection
 pinecone = Pinecone(api_key = os.environ.get('PINECONE_API_KEY'))
 
 # Connect
