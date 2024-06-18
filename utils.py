@@ -30,6 +30,12 @@ def list_csv_files(folder_path):
     # List CSV files
     return [file for file in os.listdir(folder_path) if file.endswith('.csv')]
 
+# Read csv
+def read_txt_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        data = file.read()
+    return data
+
 # 1. Extract BOE/BORME --------------------------------------------------------------
 
 # Get XML from URL
