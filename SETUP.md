@@ -1,7 +1,7 @@
 
 # Setup
 
-# Platform
+## Platform
 
 ## Register on Paperspace-Gradient
 
