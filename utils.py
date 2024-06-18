@@ -538,7 +538,7 @@ def download_from_gcs(bucket_name, source_blob_name, destination_file_name):
 # Fine Tuning
 
 # Preprocessing function
-def preprocess_function(examples):
+def preprocess_function(examples, tokenizer):
     inputs = tokenizer(
         examples["question"],
         examples["context"],
@@ -557,7 +557,6 @@ def preprocess_function(examples):
         start_char = examples["answers"][i]["answer_start"]
         end_char = start_char + len(examples["answers"][i]["text"])
 
-        # Find the start and end token indices that correspond to the start and end character positions
         start_token_idx = None
         end_token_idx = None
 
