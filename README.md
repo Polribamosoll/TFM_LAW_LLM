@@ -37,19 +37,26 @@ Other:
 
 ### Data Pipeline
 
-- 1_extract_data.ipynb: Data extraction from sources
+- 1_extract_data.ipynb: Data extraction from sources / Not needed for this project
 - 2_transform_data.ipynb: Prepare datasets for encoding
 - 3_encode_save_data.ipynb: Encode & save prepared datasets
 
 ### Similarity
 
-- 4_similarity_search: Evaluate similarity search methods
+- 4_similarity_search: Evaluate similarity search methods / Not needed for this project
 
 ### Models
 
 - 5_hybrid_rag_model.ipynb: Test methods to provide context to LLM
-- 6_deploy_model.ipynb: Model used for App deployment
+- 6_deploy_model.ipynb: Model used for App deployment / Not needed for this project
 - 7_fine_tuning.ipynb: Fine-Tuning model
+
+## Code Initialization
+
+- Create an env.txt file in main directory. Fill it with API keys for Hugging Face and Pinecone.
+- Create a Pinecone database. Add it as a parameter to the env.txt file.
+- Create a Gradient Paperspace account with pro subscription - 10$ per month.
+- Run notebooks 2,3,5,7 in the stated order to follow the document flow.
 
 ## Other
 
